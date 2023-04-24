@@ -78,9 +78,15 @@ const cancionesPP = [
     "AMG",
     {
         2020 : 5,
-        2021 : 30,
+        "2021" : 30,
         2022 : 56
     }
 ];
 
 console.log("Canción con color: ",cancionesPP[1]);
+console.log("Canciones hechas en el año 2021: ", cancionesPP[4][2021]);
+
+// Propiedades de arreglos
+
+console.log("Num total de elementos: ",cancionesPP.length);
+console.log("Contiene la canción AMG: ",cancionesPP.indexOf("AMG"));
