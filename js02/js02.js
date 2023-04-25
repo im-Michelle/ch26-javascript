@@ -175,6 +175,8 @@ const student1Courses = [
 ];
 const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
 
+const student3Courses = ["Biology", "Music"];
+
 function cursosEnComun(student1Courses, student2Courses) {
   const courses = [];
   for (let i = 0; i < student1Courses.length; i++) {
@@ -194,4 +196,7 @@ function cursosEnComunV2(student1Courses, student2Courses) {
   
 
 // console.log(cursosEnComun(student1Courses, student2Courses));
-console.log(cursosEnComunV2(student1Courses, student2Courses));
+const commonCourses = cursosEnComunV2(student1Courses, student2Courses);
+const commonCoursesWithStudent3 = cursosEnComunV2(commonCourses, student3Courses);
+console.log("Common courses:", commonCoursesWithStudent3.join(","));
+
