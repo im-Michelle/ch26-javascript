@@ -200,3 +200,71 @@ const commonCourses = cursosEnComunV2(student1Courses, student2Courses);
 const commonCoursesWithStudent3 = cursosEnComunV2(commonCourses, student3Courses);
 console.log("Common courses:", commonCoursesWithStudent3.join(","));
 
+
+// ------------------- Contar la cantidad de caracteres de una frase -----------
+// pepe pecas pica papas con un pico y una pala
+// la cantidad de letras 'p': 8
+// resolverlo usando arrow function
+
+let frase = "pepe pecas pica papas con un pico y una pala";
+
+function countCharacters(frase) {
+  let arr = frase.split('');
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if ((arr[i]).includes('p')) {
+      count++;
+    }
+  }
+  return count;
+}
+
+const countCharactersV2 = (frase,letra) => {
+  return frase.split('').filter(char => char === letra).length;
+}
+
+const countCharactersV3 = frase => (frase.match(/p/g) || []).length;
+
+
+console.log(countCharacters(frase));
+
+console.log(countCharactersV2(frase,'p'));
+
+console.log(countCharactersV3(frase));
+
+// -------------------- Funciones Recursivas ------------------------------
+// Es una técnica de programación en donde la función se llama así misma.
+// Se debe tener precausión de no entrar a un bucle infinito.
+
+/*
+  function funcionRecursiva( valor ){
+    if ( condiciónDeParo ){
+
+    }
+    else {
+        // Llamada recursiva.
+    }
+  }
+
+*/
+
+const factorialConCicloFor = numero =>{
+  let resultadoFactorial = 1;
+  
+  for(let i = numero; i > 0; i-- ){
+      resultadoFactorial *= i;
+  }
+  return resultadoFactorial;
+}
+
+function factorialRecursivo(numero) {
+  if (numero <= 1) {
+    return 1;
+  } else {
+    return numero * factorialRecursivo(numero-1);
+  }
+}
+
+
+console.log("Factorial de 5: " + factorialConCicloFor(5));
+console.log("Factorial de 5: " + factorialRecursivo(5));
