@@ -71,3 +71,36 @@ const newElement = () => {
 }
 
 newElement();
+
+
+const changeColor = (color, borderColor) => {
+    const refIntro = document.getElementById("noticias");
+    refIntro.style.color = color;
+    refIntro.style.border = `thick solid ${borderColor}`;
+}
+
+changeColor("red","red");
+
+// Agregar a un elemento un border
+// .style.border = "thick solid #0000FF"; 
+
+
+// ----- Propiedades de visulaizacion (desaparecer elementos) -----
+// display: none (Quitar el elemento de DOM)
+// visibility = hidden (Ocultar el elemento del Dom)
+
+const quitarBoton = () => {
+    const buttonRef = document.getElementById("button-B");
+    buttonRef.style.display = "none";
+};
+
+const ocultarBoton = () => {
+    const buttonRef = document.getElementById("button-B");
+    buttonRef.style.visibility = "hidden";
+};
+
+const resetBoton = () => {
+    const buttonRef = document.getElementById("button-B");
+    buttonRef.style.visibility = "visible";
+}
+  
