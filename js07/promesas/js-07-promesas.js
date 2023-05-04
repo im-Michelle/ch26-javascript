@@ -54,14 +54,44 @@ divisionDosNumeros
 
 const divisionAsincrona = (a, b) => {
     const myPromise = new Promise((resolve, reject) => {
-      if (b === 0) 
-        reject("No se puede dividir entre cero");
-      else 
-        resolve(a / b); 
+        if (b === 0)
+            reject("No se puede dividir entre cero");
+        else
+            resolve(a / b);
     });
     return myPromise;
 };
-  
+
 divisionAsincrona(10, 2)
     .then((response) => console.log(response))
     .catch((exception) => console.error(exception));
+
+
+
+// Promise.resolve();
+
+const promesaRapida = Promise.resolve(123);
+
+
+// Resulevan con .then
+
+const consumirConThen = () => {
+    promesaRapida.then(resultado => {
+        console.log("Resultado: ", resultado);
+    });
+    console.log(456);
+};
+
+consumirConThen();
+
+
+
+// Resolver con try catch
+
+const consumirConAwait = async () => {
+    const resultado = await promesaRapida;
+    console.log("Consumir con Await: ", resultado);
+    console.log(789);
+}
+
+consumirConAwait();
