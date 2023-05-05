@@ -12,6 +12,7 @@ fetch(  url  )
 
 */
 
+/*
 const url = "https://fakestoreapi.com/products";
 
 const getProducts = (url) => {
@@ -61,3 +62,26 @@ const getProductsAwait = async (url) => {
 
 
 getProductsAwait(url);
+*/
+
+
+const postUser = (url, userData) => {
+  fetch(url, {
+    method: 'POST', // PUT o DELETE
+    body: JSON.stringify(userData), // Los datos del usuario, conversion de Obj a JSON
+    headers: {'Content-Type': 'application/json'}
+  })
+  .then((response) => 
+    response.json())
+  .then((register) => console.log(register))
+  .catch((exception) => console.log(exception));
+};
+
+user = {
+  name : "El Ivan",
+  job : "leader"
+}
+
+const urlPost = "https://reqres.in/api/users";
+
+postUser(urlPost, user);
