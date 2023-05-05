@@ -53,3 +53,19 @@ for (dato in datosEmpleado) {
 
 //localStorage.setItem("datos-empleado", JSON.stringify(datosEmpleado));
 sessionStorage.setItem("datos-empleado", JSON.stringify(datosEmpleado));
+
+// Bote de lunetas 
+
+const boteLunetas = {
+    gramaje : 20,
+    sabor : "chocolate",
+    costo : 35,
+    abrir : function(){
+        return "Despachar producto";
+    },
+    comer : function(gramosComidos) {
+        return this.gramaje -= gramosComidos;
+    }
+};
+
+console.log("Mi bote de lunetas tiene(g): " +boteLunetas.comer(5));
