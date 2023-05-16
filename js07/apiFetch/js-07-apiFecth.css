@@ -1,0 +1,13 @@
+.custom-border-bottom {
+    border-bottom: 4px solid black; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-border-end {
+    border-right: 2px solid black; 
+}
+
+.circular-image {
+    border-radius: 50%;
+}
